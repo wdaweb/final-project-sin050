@@ -34,8 +34,8 @@ require_once('sql.php');
     foreach ($re as $ro) {
     ?>
       <ul class="list-unstyled my-4">
-        <li class="media d-flex flex-column flex-lg-row px-3">
-          <img src="upload/<?= $ro['img'] ?>" class="mr-4" style="width:420px;height:250px;object-fit:cover">
+        <li class="media d-flex flex-column flex-lg-row px-lg-3 align-items-center">
+          <img src="upload/<?= $ro['img'] ?>" style="width:400px;height:250px;object-fit:cover">
           <div class="media-body px-3">
             <h3 class="my-2" style="color: #668800"><?= $ro['title'] ?></h3>
             <p style="color: darkgray"><?= $ro['date'] ?></p>

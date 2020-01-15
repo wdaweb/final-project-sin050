@@ -38,45 +38,43 @@ require_once('sql.php');
         // $sql = $db->prepare('select * from q4t5_product where id=?');
         // $sql->execute([$_REQUEST['id']]);
         foreach ($sql->fetchAll() as $row) { ?>
-          <img src="upload/<?= $row['img'] ?>" class="mx-4 mt-4" alt="<?= $row['title'] ?>" style="height:300px;object-fit: cover">
+          <img src="upload/<?= $row['img'] ?>" class="mx-4 mt-4 ml-lg-5" alt="<?= $row['title'] ?>" style="width:350px;object-fit: cover">
           <div class="media-body">
-
-            <h5 class="mt-3"><?= $row['title'] ?></h5>
-            <h5 class="my-3" style="color: brown">NT$<?= $row['price'] ?></h5>
-            <div style="width: 250px">
+            <div style="width: 350px">
+              <h5 class="mt-3"><?= $row['title'] ?></h5>
+              <h5 class="my-3" style="color: brown">NT$<?= $row['price'] ?></h5>
               <p class="text-gray"><?= $row['spec'] ?></p>
               <p class="text-gray"><?= $row['text'] ?></p>
-            </div>
 
-            <div class="input-group btn-sm p-0" style="width:150px">
+              <div class="input-group btn-sm p-0">
 
-              <h5 class="pr-2 pt-2">購買數量</h5>
-              <select name="count"> <?php
-                                    for ($i = 1; $i <= 10; $i++) {
-                                      echo '<option value="', $i, '">', $i, '</option>';
-                                    } ?>
-              </select>
-            </div>
-            <input type="hidden" name="id" value="<?= $row['id'] ?>">
-            <input type="hidden" name="title" value="<?= $row['title'] ?>">
-            <input type="hidden" name="price" value="<?= $row['price'] ?>">
-
-
-            <div class="input-group btn-sm mt-4 p-0">
-              <div class="input-group-append mr-2">
-                <input type="submit" class="input-group-text" value="放入購物車" style="cursor:pointer">
-
-
+                <h5 class="pr-2 pt-2">購買數量</h5>
+                <select name="count"> <?php
+                                      for ($i = 1; $i <= 10; $i++) {
+                                        echo '<option value="', $i, '">', $i, '</option>';
+                                      } ?>
+                </select>
               </div>
-              <!-- <input type="image" src="img/0402.jpg" alt="submit"> -->
-              <div class="input-group-append">
-                <label class="input-group-text" for="inputGroupSelect02" onclick="window.history.back()" style="cursor:pointer">返回</label>
+              <input type="hidden" name="id" value="<?= $row['id'] ?>">
+              <input type="hidden" name="title" value="<?= $row['title'] ?>">
+              <input type="hidden" name="price" value="<?= $row['price'] ?>">
 
+
+              <div class="input-group btn-sm mt-4 p-0">
+                <div class="input-group-append mr-2">
+                  <input type="submit" class="input-group-text" value="放入購物車" style="cursor:pointer">
+
+
+                </div>
+                <!-- <input type="image" src="img/0402.jpg" alt="submit"> -->
+                <div class="input-group-append">
+                  <label class="input-group-text" for="inputGroupSelect02" onclick="window.history.back()" style="cursor:pointer">返回</label>
+
+                </div>
               </div>
             </div>
           </div>
       </div>
-
     </form>
 
   <?php
@@ -87,14 +85,14 @@ require_once('sql.php');
   <section id="section06">
     <div class="col-lg-12 mx-lg-4 my-5 p-0">
       <nav>
-        <div class="nav nav-tabs_c mx-5" id="nav-tab">
+        <div class="nav nav-tabs_c mx-4 mx-lg-5" id="nav-tab">
           <a class="nav-item nav-link_c active" id="tab-01" data-toggle="tab" href="#coffee-01">描述</a>
           <a class="nav-item nav-link_c" id="tab-02" data-toggle="tab" href="#coffee-02">訂購須知</a>
           <a class="nav-item nav-link_c" id="tab-03" data-toggle="tab" href="#coffee-03">運費說明</a>
         </div>
       </nav>
       <!-- 內容太長了 可以用卷軸控制內容 overflow-auto -->
-      <div class="tab-content bg-white p-3 overflow-auto  mx-5" id="nav-tabContent" style="height:500px">
+      <div class="tab-content bg-white p-3 overflow-auto  mx-4 mx-lg-5" id="nav-tabContent" style="height:500px">
         <div class="tab-pane fade show active" id="coffee-01">
           <h5 class="text-green"><?= $row['d_title'] ?></h5>
           <span>
